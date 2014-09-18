@@ -3,6 +3,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Stack;
 public class CollectionsExample {
 	public static void main(String args[])throws IOException{
 		int x[]={1, 3, 4, 5, 6, 7};
+		System.out.println("ArrayList:");
 		ArrayList<Integer> arr_list = new ArrayList<Integer>();
 		for(int value:x){
 			arr_list.add(value);
@@ -32,6 +34,7 @@ public class CollectionsExample {
 		while(rit.hasNext()){
 			System.out.println(rit.next());
 		}
+		System.out.println("HashMap");
 		HashMap<Integer, ArrayList<Integer>> hm = new HashMap<Integer,ArrayList<Integer>>();
 		for (int key:x){
 			hm.put(key, arr_list);			
@@ -53,7 +56,7 @@ public class CollectionsExample {
 			ArrayList<Integer> value = entry.getValue();
 			System.out.println("Key: "+key+" Value: "+value);			
 		}
-		
+		System.out.println("TreeMap");
 		TreeMap<Integer, ArrayList<Integer>> tm = new TreeMap<Integer, ArrayList<Integer>>(Collections.reverseOrder());
 		for(int value: arr_list){
 			tm.put(value, arr_list);
@@ -63,6 +66,7 @@ public class CollectionsExample {
 			ArrayList<Integer> val_arr_list = entry.getValue();
 			System.out.println("Key: "+key+" value: "+val_arr_list);			
 		}
+		System.out.println("LinkedList");
 		LinkedList<Integer> linked_list_queue = new LinkedList();
 		for(int value: arr_list){
 			linked_list_queue.addLast(value);
@@ -72,11 +76,17 @@ public class CollectionsExample {
 		while(lit.hasNext()){
 			System.out.println(lit.next());
 		}
+		System.out.println("Stack");
 		Stack<Integer> s = new Stack<Integer>();		
 		for(int value: arr_list){
 			s.push(value);
 		}
 		System.out.println(s);
+		System.out.println("HashSet");
+		HashSet<Integer> hs = new HashSet<Integer>();
+		hs.addAll(arr_list);
+		
+		
 		
 	}
 
