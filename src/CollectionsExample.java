@@ -1,11 +1,11 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.HashMap;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.Map;
 import java.util.TreeMap;
@@ -85,9 +85,18 @@ public class CollectionsExample {
 		System.out.println("HashSet");
 		HashSet<Integer> hs = new HashSet<Integer>();
 		hs.addAll(arr_list);
-		
-		
-		
+		Iterator hsit = hs.iterator();
+		while(hsit.hasNext()){
+			System.out.println(hsit.next());
+		}
+		System.out.println("PriorityQueue");
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(10, Collections.reverseOrder());
+		for(int value: arr_list){
+			pq.offer(value);
+		}
+		while(!pq.isEmpty()){
+			System.out.println(pq.poll());
+		}
 	}
 
 }
