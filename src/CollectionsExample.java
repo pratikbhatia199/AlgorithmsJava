@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.LinkedList;
 import java.util.Stack;
+
 public class CollectionsExample {
 	public static void main(String args[])throws IOException{
 		int x[]={1, 3, 4, 5, 6, 7};
@@ -35,7 +36,7 @@ public class CollectionsExample {
 			System.out.println(rit.next());
 		}
 		System.out.println("HashMap");
-		HashMap<Integer, ArrayList<Integer>> hm = new HashMap<Integer,ArrayList<Integer>>();
+		HashMap<Integer, ArrayList<Integer>> hm = new HashMap <Integer,ArrayList<Integer>>();
 		for (int key:x){
 			hm.put(key, arr_list);			
 		}
